@@ -1,0 +1,41 @@
+<div class="info-container">
+<!-- <div id="triangle"></div> -->
+    <div class="wrapper">
+        <h2>אנא השלימו את הפרטים הבאים</h2>
+        <form (submit)="onUpdateUser()" ngNativeValidate>
+            <div class="input">
+                <label for="lastname">שם משפחה <span *ngIf="!userInfo.lastname">שדה חובה</span></label>
+                <input id="lastname" [(ngModel)]="userInfo.lastname" type="text" name="lastname" required />
+            </div>
+            <div class="input">
+                <label for="firstname">שם פרטי <span *ngIf="!userInfo.firstname">שדה חובה</span></label>
+                <input id="firstname"  [(ngModel)]="userInfo.firstname" type="text" name="firstname" required />
+            </div>
+            <div class="input">
+                <label for="birth">תאריך לידה <span *ngIf="!userInfo.birth">שדה חובה</span></label>
+                <input id="birth" type="date" [(ngModel)]="userInfo.birth" name="birth" required />
+            </div>
+            <div class="input">
+                <label for="id">תעודת זהות <span *ngIf="!userInfo.personal_id">שדה חובה</span></label>
+                <input id="id" type="text" [(ngModel)]="userInfo.personal_id" name="personal_id" required />
+            </div>
+            <div class="input">
+                <label for="email">דואר אלקטרוני <span *ngIf="!userInfo.email">שדה חובה</span></label>
+                <input id="email" type="email" [(ngModel)]="userInfo.email" name="email" required/>
+            </div>
+            <div class="input">
+                <label for="phone">טלפון </label>
+                <input id="phone" type="text" [(ngModel)]="userInfo.phone" name="phone" />
+            </div>
+            <div class="input">
+                <label for="Account">ח.פ/שותפות/עמותה <span *ngIf="!userInfo.account">שדה חובה</span></label>
+                <input id="account" type="text" [(ngModel)]="userInfo.account" name="account" required />
+            </div>
+            <div class="input">
+                <label for="company">שם העסק <span *ngIf="!userInfo.companyname">שדה חובה</span></label>
+                <input id="company" type="text" [(ngModel)]="userInfo.companyname" name="companyname" required/>
+            </div>
+            <button type="submit" class="arrow"><i class="fas fa-arrow-left"></i>המשך</button>
+        </form>
+    </div>
+</div>

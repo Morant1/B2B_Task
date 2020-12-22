@@ -1,0 +1,35 @@
+.input {
+    display: flex;
+    flex-direction: row-reverse;
+
+    select,
+    input {
+        direction: rtl;
+        padding: 5px;
+        border: none;
+        font-size: 18px;
+    }
+
+    input {
+        width:70px;
+    }
+
+    .sub-input {
+        border-radius: 5px;
+        display: flex;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0 0 10px 10px;
+        flex-direction: row-reverse;
+        background-color: white;
+        padding-left: 10px;
+        border: 1.5px solid #9df9c9;
+
+        label {
+            margin-left: 5px;
+            border-left: 1.5px solid #9df9c9;
+            padding: 5px;
+            font-weight: 600;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+<div class="login-container">
+
+    <div class="form-modal">
+
+        <div class="form-toggle">
+            <button id="login-toggle" [ngClass]="{'blue': !isSignup}" (click)="toggleSignup(false)">log in</button>
+            <button id="signup-toggle" [ngClass]="{'blue': isSignup}" (click)="toggleSignup(true)">sign up</button>
+        </div>
+    
+        <div *ngIf="!isSignup" id="login-form">
+            <div class="usermsg" *ngIf="userMsg">Please sign up first</div>
+            <form (submit)="onLogin.emit(login)">
+                <input type="text"
+                 [(ngModel)]="login.personal_id"
+                 name="personal_id"
+                    autoComplete="off"
+                    placeholder="Enter your id"
+                    required />
+    
+                <input type="password" placeholder="Enter password"
+                    name="password"
+                    [(ngModel)]="login.password"
+                    required />
+                <button type="submit" class="btn login">login</button>
+            </form>
+        </div>
+    
+       <div *ngIf="isSignup" id="signup-form">
+            <form (submit)="onSignup.emit(signup)">
+                <input id="id" type="text" name="personal_id" [(ngModel)]="signup.personal_id"  placeholder="Enter your id" required>
+                <input id="password" name="password" type="password" [(ngModel)]="signup.password" placeholder="Enter your password" required>
+                <button type="submit" class="btn signup">create account</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- <label for="id">ID</label>
+    <input id="id" type="text" [(ngModel)]="signup.personal_id"  placeholder="Enter your id" required>
+    <label for="password">Password</label>
+    <input id="password" type="password" [(ngModel)]="signup.password" placeholder="Enter your password" required>
+    <button (click)="onSignup.emit(signup)">Sign up</button> -->
+
+</div>
+
+
+
+
+

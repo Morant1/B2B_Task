@@ -1,0 +1,19 @@
+<div *ngIf="loggedInUser" class="account-container">
+
+    <div class="wrapper">
+
+    <h2> אנא מלאו את פרטי החשבונות של חברת<span> &quot;{{loggedInUser.userInfo.companyname}}&quot;</span></h2>
+    <h3>{{loggedInUser.userInfo.account}} ח.פ</h3>
+
+    <form>
+
+        <app-bank-input *ngFor="let idx of banks; let i = index" [idx]="i" (onRemove)="removeInput($event)" (onRetrive)="retrive($event)"></app-bank-input>
+        <button type="button" (click)="onUpdate()" class="arrow"><i class="fas fa-arrow-left"></i>המשך</button>
+    </form>
+    <button type="button" (click)="goBack()">חזור</button>
+    <button type="button" (click)="addInput()">הוסף</button>
+
+</div>
+
+</div>
+

@@ -1,0 +1,26 @@
+<div class="input">
+    <!-- <label for="hold-{{idx}}">החזקה %</label>
+    <select id="hold-{{idx}}" type="text" [(ngModel)]="bankInfo.hold" (change)="onRetrive.emit(bankInfo)">
+        <option value="50%">50%</option>
+        <option value="100%">100%</option>
+      </select> -->
+    <div class="sub-input">
+        <label for="bank-{{idx}}">בנק</label>
+        <select id="bank-{{idx}}" type="text" [(ngModel)]="bankInfo.bankname" (change)="onRetrive.emit(bankInfo)">
+            <option value="פועלים">פועלים</option>
+            <option value="מזרחי">מזרחי</option>
+            <option value="דיסקונט">דיסקונט</option>
+            <option value="יהב">יהב</option>
+        </select>
+    </div>
+
+    <div class="sub-input">
+        <label for="branch-{{idx}}">סניף</label>
+        <input id="branch-{{idx}}" type="text" [(ngModel)]="bankInfo.branch" (change)="onRetrive.emit(bankInfo)" />
+    </div>
+    <div class="sub-input">
+        <label for="account-{{idx}}">חשבון</label>
+        <input id="account-{{idx}}" type="text" [(ngModel)]="bankInfo.account" (change)="onRetrive.emit(bankInfo)" />
+    </div>
+    <button (click)="onRemove.emit({id:bankInfo.id,idx:idx})">הסר</button>
+</div>
